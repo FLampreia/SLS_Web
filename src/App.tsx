@@ -1,16 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import Login from './pages/Login';
 import './App.css'
 
 function App() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-3xl font-bold text-blue-600">
-        Tailwind CSS v4 a funcionar
-      </h1>
-    </div>
-  );
+  return <Login />;
 }
 
 export default App;
