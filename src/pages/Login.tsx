@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { login } from "../../services/auth.service";
+import { login } from "../services/auth.service";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -14,10 +14,21 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const data = await login(email, password);
-      console.log(data);
+      const { status, data } = await login(email, password);
+
+      if (status === 200) {
+        // Guardar tokens
+        localStorage.setItem('access_token', data.access_token);
+        localStorage.setItem('refresh_token', data.refresh_token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+
+        navigate('/home');
+      } else {
+        alert(data.message || 'Credenciais inválidas');
+      }
     } catch (error) {
-      console.error("Erro no login:", error);
+      console.error('Erro no login:', error);
+      alert('Erro ao comunicar com o servidor');
     } finally {
       setLoading(false);
     }

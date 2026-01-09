@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signup } from "../../services/auth.service";
+import { signup } from "../services/auth.service";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -137,12 +137,13 @@ export default function SignUp() {
                     </button>
 
                     <p className="text-sm text-center text-gray-600 mt-4">
+                        Já tens conta?{" "}
                         <button
                             type="button"
                             className="text-green-700 font-semibold hover:underline"
                             onClick={() => navigate('/')}
                         >
-                            Já tens conta? Login
+                            Login
                         </button>
                     </p>
                 </form>

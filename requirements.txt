@@ -1,3 +1,7 @@
+ver 
+    npm react typescript e tailwind
 
-npm react typescript e tailwind
-npm install react-router-dom
+comandos
+
+    npm install react-router-dom
+    npm install lucide-react

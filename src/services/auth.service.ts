@@ -10,7 +10,12 @@ export async function login(email: string, password: string) {
     }),
   });
 
-  return response.json();
+  const data = await response.json();
+
+  return {
+    status: response.status,
+    data
+  };
 }
 
 export async function signup(username: string, email: string, password: string, full_name: string) {
@@ -34,10 +39,4 @@ export async function signup(username: string, email: string, password: string, 
     status: response.status,
     data
   };
-
-  return{
-    ok: response.ok,
-    data: response.json()
-  };
-
 }
