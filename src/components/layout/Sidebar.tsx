@@ -1,5 +1,6 @@
 import { Home, Video, ClipboardClock, Users, Settings, LogOut, X } from "lucide-react";
 import { MenuItem } from "../navigation/MenuItem";
+import LogoutButton from "./LogoutButton";
 
 interface SidebarProps {
     mobile?: boolean;
@@ -34,7 +35,7 @@ export function Sidebar({ mobile = false, onClose }: SidebarProps) {
             </nav>
 
             <div className="p-4 border-t border-green-600">
-                <MenuItem icon={<LogOut size={20} />} label="Terminar Sessão" />
+                <LogoutButton />
             </div>
         </aside>
     );
